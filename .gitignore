@@ -1,4 +1,10 @@
 # Key Pairs
 *.pub
 *.p8
+
+# Env files
 *.properties
+
+# snowsql logs
+*.log
+*.log_bootstrap

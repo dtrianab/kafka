@@ -1,0 +1,22 @@
+{
+    "name":"sf_sink_stocktrades_SnowflakeJsonConverter",
+    "config":{
+      "connector.class":"com.snowflake.kafka.connector.SnowflakeSinkConnector",
+      "tasks.max":"8",
+      "topics":"stock-trades-1",
+      "snowflake.topic2table.map": "stock-trades:stock_trades_v1",
+      "buffer.count.records":"10000",
+      "buffer.flush.time":"60",
+      "buffer.size.bytes":"5000000",
+      "snowflake.url.name": "${file:/opt/kafka/my-external-configuration/snowflake.properties:SNOWFLAKE_URL_NAME}",
+      "snowflake.user.role":"${file:/opt/kafka/my-external-configuration/snowflake.properties:SNOWFLAKE_USER_ROLE}",
+      "snowflake.user.name":"${file:/opt/kafka/my-external-configuration/snowflake.properties:SNOWFLAKE_USER_NAME}",
+      "snowflake.private.key":"${file:/opt/kafka/my-external-configuration/snowflake.properties:SNOWFLAKE_PRIVATE_KEY}",
+      "snowflake.database.name":"${file:/opt/kafka/my-external-configuration/snowflake.properties:SNOWFLAKE_DATABASE_NAME}",
+      "snowflake.schema.name":"${file:/opt/kafka/my-external-configuration/snowflake.properties:SNOWFLAKE_SCHEMA_NAME}",
+      "key.converter":"org.apache.kafka.connect.storage.StringConverter",
+      "value.converter":"com.snowflake.kafka.connector.records.SnowflakeJsonConverter",
+      "value.converter.schema.registry.url":"http://localhost:8081",
+      "schemas.enable":false
+    }
+  }

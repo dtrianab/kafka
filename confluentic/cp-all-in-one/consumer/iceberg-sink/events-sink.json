@@ -1,0 +1,14 @@
+{
+    "name": "events-sink",
+    "config": {
+        "connector.class": "io.tabular.iceberg.connect.IcebergSinkConnector",
+        "tasks.max": "2",
+        "topics": "events",
+        "iceberg.tables.dynamic.enabled": "true",
+        "iceberg.tables.routeField": "db_table",
+        "iceberg.catalog.type": "rest",
+        "iceberg.catalog.uri": "https://localhost",
+        "iceberg.catalog.credential": "<credential>",
+        "iceberg.catalog.warehouse": "<warehouse name>"
+        }
+}
