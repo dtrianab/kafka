@@ -1,3 +1,4 @@
 # Key Pairs
 *.pub
 *.p8
+*.properties
