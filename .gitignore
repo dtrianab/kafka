@@ -8,3 +8,4 @@
 # snowsql logs
 *.log
 *.log_bootstrap
+*.csv
