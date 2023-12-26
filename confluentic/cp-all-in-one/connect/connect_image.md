@@ -1,5 +1,5 @@
 # Build Image >> 
-sudo docker build . -t my-connect-built
+docker build . -t my-connect-built
 
 
 # Install Kafka Connectors Resources
