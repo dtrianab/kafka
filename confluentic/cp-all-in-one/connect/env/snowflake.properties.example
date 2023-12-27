@@ -1,0 +1,6 @@
+SNOWFLAKE_URL_NAME=account_locator.eu-central-1.snowflakecomputing.com
+SNOWFLAKE_USER_ROLE=kafka_connector_role_1
+SNOWFLAKE_USER_NAME=kafka_connector_user_1
+SNOWFLAKE_PRIVATE_KEY=
+SNOWFLAKE_DATABASE_NAME=kafka_db
+SNOWFLAKE_SCHEMA_NAME=kafka_schema

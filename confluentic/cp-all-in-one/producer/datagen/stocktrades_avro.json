@@ -1,11 +1,12 @@
 {
-    "name": "datagen_stocktrades_apache_json_converter",
+    "name": "stocktrades_avro",
     "config": {
       "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
-      "kafka.topic": "stock-trades-1",
+      "kafka.topic": "stocktrades_avro",
       "quickstart": "Stock_Trades",
       "key.converter": "org.apache.kafka.connect.storage.StringConverter",
-      "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+      "value.converter": "io.confluent.connect.avro.AvroConverter",
+      "value.converter.schema.registry.url": "http://schema-registry:8081",
       "value.converter.schemas.enable": "false",
       "max.interval": 100,
       "iterations": 10000000,

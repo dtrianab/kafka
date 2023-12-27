@@ -5,9 +5,12 @@ This repo is a demo of Conluentic docker images for testing and learning.
 
 
 docker-compose up --force-recreate
+docker-compose up -d --force-recreate
 
 # Delete all Containers
 docker rm -f $(docker ps -a -q)
 
 # Terminal
 docker exec -it connect sh
+docker exec -it broker sh
+

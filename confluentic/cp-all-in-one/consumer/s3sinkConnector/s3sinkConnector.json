@@ -1,0 +1,26 @@
+{
+    "name": "s3SinkConnector",
+    "config":{
+        "connector.class": "io.confluent.connect.s3.S3SinkConnector",
+        "key.converter":"org.apache.kafka.connect.storage.StringConverter",
+        "value.converter": "io.confluent.connect.avro.AvroConverter",
+        "value.converter.schema.registry.url": "http://schema-registry:8081",
+        "value.converter.schemas.enable": "false",
+        "tasks.max": "1",
+        "topics": "stocktrades_avro",
+        "s3.region": "${file:/opt/kafka/my-external-configuration/s3.properties:aws_s3_region}",
+        "aws.access.key.id": "${file:/opt/kafka/my-external-configuration/s3.properties:aws_access_key_id}",
+        "aws.secret.access.key": "${file:/opt/kafka/my-external-configuration/s3.properties:aws_secret_access_key}",
+        "s3.bucket.name": "${file:/opt/kafka/my-external-configuration/s3.properties:aws_s3_bucket_name}",
+        "flush.size": "65536",
+        "storage.class": "io.confluent.connect.s3.storage.S3Storage",
+        "format.class": "io.confluent.connect.s3.format.avro.AvroFormat",
+        "schema.generator.class": "io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator",
+        "schema.compatibility": "NONE",
+        "partitioner.class": "io.confluent.connect.storage.partitioner.DefaultPartitioner",
+        "transforms": "AddMetadata",
+        "transforms.AddMetadata.type": "org.apache.kafka.connect.transforms.InsertField$Value",
+        "transforms.AddMetadata.offset.field": "_offset",
+        "transforms.AddMetadata.partition.field": "_partition"
+        }
+}

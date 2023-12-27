@@ -7,5 +7,6 @@
 
 # snowsql logs
 *.log
+*.log.*
 *.log_bootstrap
 *.csv
